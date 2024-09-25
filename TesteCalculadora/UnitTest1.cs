@@ -4,6 +4,9 @@ namespace TesteCalculadora;
 
 public class UnitTest1
 {
+
+    public List<String> hitorico { get; set; }
+
     [Fact]
     public void TestSomarSimples()
     {
