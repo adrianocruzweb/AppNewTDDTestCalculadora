@@ -7,12 +7,20 @@ namespace AppNewTDDTestCalculadora
 {
     public class Calculadora
     {
+        private string data;
+
         private List<String> listahistorico { get; set; }
 
         public Calculadora()
         {
             listahistorico = new List<String>();
         }
+
+        public Calculadora(string data)
+        {
+            this.data = data;
+        }
+
         public int somar(int val1, int val2)
         {
             int res = val1 + val2;

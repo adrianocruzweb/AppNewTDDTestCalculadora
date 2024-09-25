@@ -4,10 +4,18 @@ namespace TesteCalculadora;
 
 public class UnitTest1
 {
+
+    public Calculadora construirClasse()
+    {
+        string data = "25/05/2024";
+        Calculadora calculadora = new Calculadora(data);
+        return calculadora;
+    }
+
     [Fact]
     public void TestSomarSimples()
     {
-        Calculadora calculadora = new Calculadora();
+        Calculadora calculadora = construirClasse();
 
         int resultado = calculadora.somar(1,2);
 
@@ -19,7 +27,7 @@ public class UnitTest1
     [InlineData(4,5,9)]
     public void TestSomar(int val1, int val2, int resultado)
     {
-        Calculadora calculadora = new Calculadora();
+        Calculadora calculadora = construirClasse();
 
         int resultadoCalculado = calculadora.somar(val1,val2);
 
@@ -31,7 +39,7 @@ public class UnitTest1
     [InlineData(2,1,1)]
     public void TestSubtrair(int val1, int val2, int resultado)
     {
-        Calculadora calculadora = new Calculadora();
+        Calculadora calculadora = construirClasse();
 
         int resultadoCalculado = calculadora.subtrair(val1,val2);
 
@@ -43,7 +51,7 @@ public class UnitTest1
     [InlineData(2,1,2)]
     public void TestMultiplicar(int val1, int val2, int resultado)
     {
-        Calculadora calculadora = new Calculadora();
+        Calculadora calculadora = construirClasse();
 
         int resultadoCalculado = calculadora.multiplicar(val1,val2);
 
@@ -55,7 +63,7 @@ public class UnitTest1
     [InlineData(2,1,2)]
     public void TestDividir(int val1, int val2, int resultado)
     {
-        Calculadora calculadora = new Calculadora();
+        Calculadora calculadora = construirClasse();
 
         int resultadoCalculado = calculadora.dividir(val1,val2);
 
@@ -65,7 +73,7 @@ public class UnitTest1
     [Fact]
     public void TestarDivisaoPorZero()
     {
-        Calculadora calculadora = new Calculadora();
+        Calculadora calculadora = construirClasse();
 
         Assert.Throws<DivideByZeroException>(() => calculadora.dividir(3,0));
     }
@@ -73,7 +81,7 @@ public class UnitTest1
     [Fact]
     public void TestarHistorico()
     {
-        Calculadora calculadora = new Calculadora();
+        Calculadora calculadora = construirClasse();
 
         calculadora.somar(1,2);
         calculadora.somar(2,2);
