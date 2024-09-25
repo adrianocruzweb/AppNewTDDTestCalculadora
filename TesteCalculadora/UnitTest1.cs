@@ -70,7 +70,7 @@ public class UnitTest1
         Assert.Throws<DivideByZeroException>(() => calculadora.dividir(3,0));
     }
 
-    /* [Fact]
+    [Fact]
     public void TestarHistorico()
     {
         Calculadora calculadora = new Calculadora();
@@ -80,9 +80,9 @@ public class UnitTest1
         calculadora.somar(1,3);
         calculadora.somar(2,3);
 
-        var lista = calculadora.historico()
+        var lista = calculadora.historico();
 
         Assert.NotEmpty(lista);
-        Assert.Equal(3,lista.Count());
-    } */
+        Assert.Equal(3, lista.Count());
+    }
 }

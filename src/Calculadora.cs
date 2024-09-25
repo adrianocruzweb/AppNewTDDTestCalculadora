@@ -8,6 +8,11 @@ namespace AppNewTDDTestCalculadora
     public class Calculadora
     {
         private List<String> listahistorico { get; set; }
+
+        public Calculadora()
+        {
+            listahistorico = new List<String>();
+        }
         public int somar(int val1, int val2)
         {
             int res = val1 + val2;
@@ -41,8 +46,10 @@ namespace AppNewTDDTestCalculadora
             return res;
         }
 
-        public List<string> historico(int val1, int val2)
+        public List<string> historico()
         {
+            listahistorico.RemoveRange(3,listahistorico.Count - 3);
+
             return listahistorico;
         }
     }
